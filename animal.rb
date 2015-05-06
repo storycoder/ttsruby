@@ -21,3 +21,4 @@ end
 
 a = Animal.new("Carnivora", "Felidae", "Felinae", "Felis", "catus")
 a.introduction
+puts "Bye Git!"

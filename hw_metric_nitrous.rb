@@ -1,9 +1,9 @@
 puts "Height/Weight US/Canada converter"
-puts "Will you be traveling to the US or Canada?"
+puts "Will you be traveling from the US or Canada?"
 from = gets.chomp.upcase
 while from != "CANADA" && from != "US"
   puts "That is not a valid country. Please try again."
-  puts "Will you be traveling to the US or Canada?"
+  puts "Will you be traveling from the US or Canada?"
   from = gets.chomp.upcase
 end
   if from == "US"

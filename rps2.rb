@@ -3,6 +3,7 @@ puts "Let's get started. Please enter rock, paper or scissors:"
 user = gets.chomp.downcase
 rps = ["rock", "paper", "scissors"]
 comp = rps.sample
+puts comp
 @user_wins = 0
 @comp_wins = 0
 
@@ -36,36 +37,47 @@ until user == "quit"
 #       puts "Type quit if you'd like to end the game."
 #       puts "Otherwise please enter rock, paper, or scissors."
 #       user = gets.chomp.downcase
-    elsif user == "scissors" && comp == "rock"
+    elsif user == "rock" && comp == "scissors"
       puts "Your rock destroyed my scissors. You win!"
       @user_wins += 1
 #       puts "Type quit if you'd like to end the game."
 #       puts "Otherwise please enter rock, paper, or scissors."
 #       user = gets.chomp.downcase
-    elsif user == "paper" && comp == "scissors"
+    elsif user == "scissors" && comp == "paper"
       puts "Your scissors shreded my paper. You win!"
       @user_wins += 1
 #       puts "Type quit if you'd like to end the game."
 #       puts "Otherwise please enter rock, paper, or scissors."
 #       user = gets.chomp.downcase
   end
+  puts "Your #{@user_wins} to my #{@comp_wins}"
+  if @comp_wins == 5
+      puts "I have 5. I win it all!"
+      elsif @user_wins == 5
+      puts "You have 5. You win!"
+  end
   if @comp_wins == 5 || @user_wins == 5
-    break
+    
 #       if @comp_wins == 5
 #       puts "I have 5. I win it all!"
 #       else @user_wins == 5
 #       puts "You have 5. You win!"
-#       puts "Your #{@user_wins} to my #{@comp_wins}"
-#       break
-#     end
-#     if @comp_wins > @user_wins
-#       puts "I'm winning!"
-#       elsif @comp_wins < @user_wins
-#       puts "You're winning!"
-#     end
-    
+#       end
+#     puts "Your #{@user_wins} to my #{@comp_wins}"
+    break
+  end
+  if @comp_wins > @user_wins
+    puts "I'm winning!"
+    elsif @comp_wins < @user_wins
+    puts "You're winning!"
   end
   puts "Type quit if you'd like to end the game."
   puts "Otherwise please enter rock, paper, or scissors."
   user = gets.chomp.downcase
+  if user == "quit"
+    puts "See you later."
+    break
+  end
+  comp = rps.sample
+  puts comp
 end
